@@ -40,7 +40,7 @@ public class MailService implements IMailService {
         Mail mail = new Mail(from, request.getSubject(), to, content);
 
 
-        /*if(request.getAttachments().size() != 0){
+        if(request.getAttachments().size() != 0){
             for(var file : request.getAttachments()){
                 Attachments attachment = new Attachments();
                 Base64 x = new Base64();
@@ -52,7 +52,7 @@ public class MailService implements IMailService {
                 attachment.setContentId("Banner");
                 mail.addAttachments(attachment);
             }
-        }*/
+        }
 
         String key = env.getProperty("SENDGRID_API_KEY");
         SendGrid sg = new SendGrid(key);
