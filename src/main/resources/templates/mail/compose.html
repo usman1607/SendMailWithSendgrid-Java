@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout2}">
+<head>
+    <meta charset="UTF-8">
+    <title>Compose Mail</title>
+</head>
+<div class="p-2 add-staff createForm mb-5">
+    <h4>Compose Mail</h4>
+    <form method="post" th:action="${'/send'}" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Sender Email</label>
+                <input type="email" class="form-control mw-100" name="senderEmail" required>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label>Receiver Email</label>
+                <input type="email" class="form-control mw-100" name="receiverEmail" required>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label>Subject</label>
+                <input type="text" class="form-control mw-100" name="subject" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Message Body</label>
+                <input type="text" class="form-control" name="content">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Attachments</label>
+                <input type="file" class="form-control" name="attachments" multiple>
+            </div>
+        </div>
+
+
+
+        <div>
+            <button class="btn-outline-success" name="button">send Mail</button>
+        </div>
+    </form>
+</div>
+
+<body>
+
+</body>
+</html>
