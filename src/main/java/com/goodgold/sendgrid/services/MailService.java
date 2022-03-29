@@ -37,6 +37,8 @@ public class MailService implements IMailService {
                 "<body><p>Dear "+request.receiverName+"</p><p>Please click the link below to reset your password.</p>" +
                 "<a href='"+contentPath+"'>Reset password</a></body></html>";
         Content content = new Content("text/html", body);
+        var newBody = request.content;
+        Content content2 = new Content("text/html", newBody);
         Mail mail = new Mail(from, request.getSubject(), to, content);
 
 
